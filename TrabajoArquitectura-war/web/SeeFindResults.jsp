@@ -25,7 +25,7 @@
                     Anónimo
                 <%}%>
                 <form action="FrontServlet">
-                    <input type="hidden" name="command" value="DatosBusqueda">
+                    <input type="hidden" name="command" value="DisplaySearchCommand">
                     <input type="hidden" name="id" value=<%=cv.getId()%>>
                     <input type="submit" value="Ver">       
                 </form>

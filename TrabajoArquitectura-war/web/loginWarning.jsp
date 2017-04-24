@@ -16,7 +16,13 @@
         <div style="text-align: center"><p><h4>Debes de iniciar sesión para realizar para poder realizar esta acción</h4></p>
         <p><a href="loginScreen.jsp" >Iniciar sesión</a>
         <a href="registerScreen.jsp">Registrarse</a>
-        <a href="http://localhost:8080/TrabajoArquitectura-war/PaginaPrincipal.jsp">Volver</a></p></div>
+        <a id = "volver" onclick="goBack()" style="text-decoration: underline; cursor: pointer">Volver</a></p></div>
+        
+        <script>
+            function goBack() {
+                window.history.back();
+            }   
+        </script>
         
     </body>
 </html>

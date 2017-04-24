@@ -41,7 +41,11 @@ body{
 }
 
 .logins{
-    text-align: right;
+    position: absolute;
+    top: 5px;
+    right: 0;
+    
+    
 }
 
 .login{
@@ -57,6 +61,7 @@ body{
 h1{
     text-align: center;
     font-size: 250%;
+    padding: 0.1em 2.9em 1.5em;
 }
 
 .list-type3{
@@ -157,3 +162,37 @@ input[type=submit]:hover{
  color: #3a7999;
  box-shadow: inset 0 0 0 3px #3a7999;
 }
+
+#oferts{
+    width: 70%;
+    margin: auto;
+    padding: 10px;
+}
+
+#oferts_titulo{
+    color: #ffffff;
+    background: #6699ff;
+    line-height: 2.5;
+    padding: 0 1em;
+    margin: 0;
+    box-shadow: 0 -1px, 0 0 #ffffff inset;
+    cursor:pointer;
+  
+}
+
+#oferts_nuevaOferta{
+    color: #ffffff;
+    background: #675e5e;
+    line-height: 2.5;
+    padding: 0 1em;
+    margin: 0;
+    box-shadow: 0 -1px, 0 0 #ffffff inset;
+    cursor:pointer;
+  
+}
+#oferts_contenido{
+    display: none;
+    margin: 0;
+    padding: 1em 1em 1.5em;
+}
+

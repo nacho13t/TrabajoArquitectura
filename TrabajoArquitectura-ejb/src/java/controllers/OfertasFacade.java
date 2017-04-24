@@ -5,9 +5,7 @@
  */
 package controllers;
 
-import entities.Cvs;
-import java.util.ArrayList;
-import java.util.List;
+import entities.Ofertas;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -17,7 +15,7 @@ import javax.persistence.PersistenceContext;
  * @author nacho
  */
 @Stateless
-public class CvsFacade extends AbstractFacade<Cvs> {
+public class OfertasFacade extends AbstractFacade<Ofertas> {
 
     @PersistenceContext(unitName = "logins")
     private EntityManager em;
@@ -27,18 +25,8 @@ public class CvsFacade extends AbstractFacade<Cvs> {
         return em;
     }
 
-    public CvsFacade() {
-        super(Cvs.class);
+    public OfertasFacade() {
+        super(Ofertas.class);
     }
     
-    public List<Cvs> lookText(String text){
-        List<Cvs> lista = new ArrayList();
-        for (Cvs cvs : super.findAll()) {
-            if((cvs.contiene(text))&&(lista.size()<10))lista.add(cvs);
-        }
-        for (Cvs cvs : lista) {
-            System.out.println(cvs.getId());
-        }
-        return lista;
-    }
 }

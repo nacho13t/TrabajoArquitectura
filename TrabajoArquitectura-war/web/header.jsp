@@ -1,6 +1,10 @@
 
 <header>  
-    
+    <div class="empresas">
+        <%  if(session.getAttribute("name") == null) {%>
+        <a href="Enterprises.jsp">Empresas</a>
+        <%}%> 
+    </div>
     <div class="logins">
         <%  if(session.getAttribute("name") == null) {%>
         <a href="loginScreen.jsp" >Iniciar sesión</a>

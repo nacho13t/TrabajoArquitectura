@@ -4,6 +4,8 @@
     <jta-data-source>jdbc/sample</jta-data-source>
     <class>entities.Login</class>
     <class>entities.Cvs</class>
+    <class>entities.Enterprises</class>
+    <class>entities.Ofertas</class>
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.schema-generation.database.action" value="create"/>
