@@ -25,10 +25,15 @@
                 <input type="hidden" name="id" value=<%=cv.getId()%>>
                 <input type="submit" value="Ver o editar">       
             </form>
+            <form action="FrontServlet">
+                <input type="hidden" name="command" value="DeleteCVCommand">
+                <input type="hidden" name="id" value=<%=cv.getId()%>>
+                <input type="submit" value="Eliminar" id="eliminar">       
+            </form>
             <%
         };
         %>
-        
+        <a href="PaginaPrincipal.jsp" id="volver">Volver</a>
     </body>
 </html>
      

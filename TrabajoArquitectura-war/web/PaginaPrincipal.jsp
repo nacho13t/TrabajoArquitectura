@@ -1,5 +1,6 @@
+<%@page import="timer.CambioFoto"%>
 <%! HttpSession session;%>
-
+<%!CambioFoto cf;%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -27,7 +28,7 @@
                         </ol>
                     </div>
                 </td> 
-                <td><img src="images/foto1.jpg" alt="foto1"></td>
+                <td><img src="images/<%=cf.actual%>" alt="foto1"></td>
             </tr>
         </table>
 </html>

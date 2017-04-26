@@ -17,6 +17,14 @@ public class FindTextCommand extends FrontCommand{
         CvsController cvsController = new CvsController();
         List<Cvs> lista = cvsController.buscar(request.getParameter("busqueda"));
         if(!lista.isEmpty())request.setAttribute("lista", lista);
+        if(request.getParameter("tipo").equals("empresas")){
+            request.removeAttribute("empresas");
+            try {
+                forward("/EnterprisesSeeFindResults.jsp");
+            } catch (ServletException | IOException ex) {
+                Logger.getLogger(loginCommand.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
         try {
             forward("/SeeFindResults.jsp");
         } catch (ServletException | IOException ex) {

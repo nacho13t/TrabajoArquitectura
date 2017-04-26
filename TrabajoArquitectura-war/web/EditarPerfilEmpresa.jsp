@@ -52,7 +52,7 @@
     </head>
     <body>
         <h2 style="text-align: center">Perfil empresa</h2>
-        <form action="FrontServlet">
+        <form action="FrontServlet" onsubmit="return validateEnterprisePerfil()" name="enterprisePerfilForm">
             <input type="hidden" name="command" value="UpdateEnterprisePerfilCommand">
             
             <label for="perf">Perfil</label>
@@ -74,5 +74,6 @@
             
             <input type="submit" value="Actualizar">
         </form>
+        <script src="scripts.js"></script>
     </body>
 </html>

@@ -34,9 +34,18 @@
                             <form action="FrontServlet">
                                 <input type="text" name="busqueda">
                                 <input type="hidden" name="command" value="FindTextCommand">
+                                <input type="hidden" name="tipo" value="personas">
                                 <input type="submit" value="Buscar">
                             </form>
                         </li> 
+                        <li>
+                            Buscar ofertas de empleo de empresas:
+                            <form action="FrontServlet">
+                                <input type="text" name="busqueda">
+                                <input type="hidden" name="command" value="FindOfertsCommand">
+                                <input type="submit" value="Buscar">
+                            </form>
+                        </li>
                     </ul>
                 </td> 
                 <td><img src="images/foto5.jpg" alt="foto2"></td>

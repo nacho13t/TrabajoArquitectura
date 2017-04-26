@@ -36,9 +36,6 @@ public class CvsFacade extends AbstractFacade<Cvs> {
         for (Cvs cvs : super.findAll()) {
             if((cvs.contiene(text))&&(lista.size()<10))lista.add(cvs);
         }
-        for (Cvs cvs : lista) {
-            System.out.println(cvs.getId());
-        }
         return lista;
     }
 }

@@ -6,6 +6,8 @@
 package controllers;
 
 import entities.Ofertas;
+import java.util.ArrayList;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -27,6 +29,14 @@ public class OfertasFacade extends AbstractFacade<Ofertas> {
 
     public OfertasFacade() {
         super(Ofertas.class);
+    }
+    
+    public List<Ofertas> lookText(String text){
+        List<Ofertas> lista = new ArrayList();
+        for (Ofertas ofertas : super.findAll()) {
+            if((ofertas.contiene(text))&&(lista.size()<10))lista.add(ofertas);
+        }
+        return lista;
     }
     
 }

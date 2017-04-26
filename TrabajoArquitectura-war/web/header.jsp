@@ -1,7 +1,18 @@
 
+
+<%@page import="timer.MuestraHora"%>
 <header>  
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <div id="timerDiv">
+    <h4 id="hora">Hora</h4>
+        <div id="horaContenido">
+            <div id="textoHora">
+            <%=MuestraHora.hora%>
+            </div>
+        </div>
+    </div>
     <div class="empresas">
-        <%  if(session.getAttribute("name") == null) {%>
+        <%if(session.getAttribute("name") == null) {%>
         <a href="Enterprises.jsp">Empresas</a>
         <%}%> 
     </div>
@@ -29,4 +40,5 @@
             <li><a title="Social" href="Social.jsp">Social</a></li>
         </ul>
     </nav>
+    <script src="scripts.js"></script>
 </header>

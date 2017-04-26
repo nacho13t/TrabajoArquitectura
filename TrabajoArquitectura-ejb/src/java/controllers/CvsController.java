@@ -77,6 +77,11 @@ public class CvsController {
         List<Cvs> lista = cvsFacade.lookText(text);
         return lista;
     }
+    
+    public void borrar(int id){
+        CvsFacade cvsFacade = lookupCvsFacadeBean();
+        cvsFacade.remove(new Cvs(id));
+    }
 
     private CvsFacade lookupCvsFacadeBean() {
         try {

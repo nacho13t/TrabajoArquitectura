@@ -5,12 +5,12 @@
 <jsp:forward page="loginWarning.jsp"/>
 <%}%>
 <%ArrayList datos = (ArrayList)request.getAttribute("datos");%>
-<%String[] titulos = {"Nombre","Apellidos","País","Provincia","Código postal","Experiencia laboral","Educación y formación","Lengua materna","Idiomas","Competencias comunicativas","Competencias organizativas","Competencias relacionadas con el empleo","Competencias digitales","Nombre de usuario"};%>
+<%String[] titulos = {"Empresa","Cargo","Descripción"};%>
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="newcss1.css" media="screen" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>CV</title>
+        <title>Oferta</title>
     </head>
     <body>
         <div><ol>

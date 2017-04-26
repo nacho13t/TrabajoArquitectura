@@ -55,12 +55,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="newcss.css" media="screen" />
+        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
         <title>Crea tu CV</title>
     </head>
     <body>
         <h1 style="text-align: center">Currículum Vítae</h1>
         <div>
-        <form action="FrontServlet">
+        <form action="FrontServlet" name="cvForm" onsubmit="return validateCVForm()">
             <input type='hidden' name='command' value='manageCVCommand'>
             
             <label for="fname">Nombre</label>
@@ -113,5 +114,7 @@
             <input type="submit" value="Finalizar">
         </form>
         </div>
+        
+        <script src="scripts.js"></script>
     </body>
 </html>

@@ -5,36 +5,32 @@
  */
 package frontcontroller;
 
-import controllers.LoginController;
+import controllers.OfertasController;
+import entities.Ofertas;
 import java.io.IOException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author nacho
  */
-public class registerCommand extends FrontCommand{
+public class FindOfertsCommand extends FrontCommand {
 
     @Override
     public void process() {
-        String user = request.getParameter("user");
-        String pass = request.getParameter("pass");
-        LoginController log = new LoginController();
-        if(!log.validar(user, pass)){
-            log.registrar(user,pass);
-            if(log.validar(user,pass)){
-                HttpSession session = request.getSession();
-                session.setAttribute("name", user);
-            }
-        }        
+        OfertasController ofc = new OfertasController();
+        List<Ofertas> lista = ofc.buscar(request.getParameter("busqueda"));
+        if (!lista.isEmpty()) {
+            request.setAttribute("lista", lista);
+        }
         try {
-            forward("/PaginaPrincipal.jsp");
+            forward("/SeeOfertsSearchResult.jsp");
         } catch (ServletException | IOException ex) {
             Logger.getLogger(loginCommand.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
 }

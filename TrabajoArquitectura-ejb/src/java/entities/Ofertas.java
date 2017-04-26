@@ -89,7 +89,14 @@ public class Ofertas implements Serializable {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-
+    
+    public boolean contiene(String text){
+        if((empresa!=null)&&(empresa.contains(text)))return true;
+        if((cargo!=null)&&(cargo.contains(text)))return true;
+        if((descripcion!=null)&&(descripcion.contains(text)))return true;
+        return false;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 0;
