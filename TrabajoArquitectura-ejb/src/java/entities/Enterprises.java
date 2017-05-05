@@ -32,7 +32,9 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Enterprises.findByObjetivo", query = "SELECT e FROM Enterprises e WHERE e.objetivo = :objetivo")
     , @NamedQuery(name = "Enterprises.findByMision", query = "SELECT e FROM Enterprises e WHERE e.mision = :mision")
     , @NamedQuery(name = "Enterprises.findByVision", query = "SELECT e FROM Enterprises e WHERE e.vision = :vision")
-    , @NamedQuery(name = "Enterprises.findByValores", query = "SELECT e FROM Enterprises e WHERE e.valores = :valores")})
+    , @NamedQuery(name = "Enterprises.findByValores", query = "SELECT e FROM Enterprises e WHERE e.valores = :valores")
+    , @NamedQuery(name = "Enterprises.findByValoracion", query = "SELECT e FROM Enterprises e WHERE e.valoracion = :valoracion")
+    , @NamedQuery(name = "Enterprises.findByValoraciones", query = "SELECT e FROM Enterprises e WHERE e.valoraciones = :valoraciones")})
 public class Enterprises implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -70,6 +72,10 @@ public class Enterprises implements Serializable {
     @Size(min = 1, max = 1000)
     @Column(name = "VALORES")
     private String valores;
+    @Column(name = "VALORACION")
+    private Integer valoracion;
+    @Column(name = "VALORACIONES")
+    private Integer valoraciones;
 
     public Enterprises() {
     }
@@ -141,6 +147,22 @@ public class Enterprises implements Serializable {
 
     public void setValores(String valores) {
         this.valores = valores;
+    }
+
+    public Integer getValoracion() {
+        return valoracion;
+    }
+
+    public void setValoracion(Integer valoracion) {
+        this.valoracion = valoracion;
+    }
+
+    public Integer getValoraciones() {
+        return valoraciones;
+    }
+
+    public void setValoraciones(Integer valoraciones) {
+        this.valoraciones = valoraciones;
     }
 
     @Override

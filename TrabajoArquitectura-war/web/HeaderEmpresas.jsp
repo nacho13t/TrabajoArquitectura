@@ -1,5 +1,6 @@
 
 <header>  
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <div class="empresas">
         <%  if(session.getAttribute("name") == null) {%>
         <a href="PaginaPrincipal.jsp">Particulares</a>

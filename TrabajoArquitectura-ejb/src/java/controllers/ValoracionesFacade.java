@@ -5,9 +5,7 @@
  */
 package controllers;
 
-import entities.Login;
-import java.util.ArrayList;
-import java.util.List;
+import entities.Valoraciones;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -17,7 +15,7 @@ import javax.persistence.PersistenceContext;
  * @author nacho
  */
 @Stateless
-public class LoginFacade extends AbstractFacade<Login> {
+public class ValoracionesFacade extends AbstractFacade<Valoraciones> {
 
     @PersistenceContext(unitName = "logins")
     private EntityManager em;
@@ -27,16 +25,8 @@ public class LoginFacade extends AbstractFacade<Login> {
         return em;
     }
 
-    public LoginFacade() {
-        super(Login.class);
-    }
-
-    public List<Login> lookText(String text) {
-        List<Login> lista = new ArrayList();
-        for (Login login : super.findAll()) {
-            if((login.contiene(text))&&(lista.size()<10))lista.add(login);
-        }
-        return lista;
+    public ValoracionesFacade() {
+        super(Valoraciones.class);
     }
     
 }

@@ -43,7 +43,7 @@ body{
 .logins{
     position: absolute;
     top: 5px;
-    right: 0;
+    left: 87%;
     
     
 }
@@ -62,10 +62,10 @@ h1{
     text-align: center;
     font-size: 250%;
     padding: 0.1em 2.9em 1.5em;
+    
 }
 
 .list-type3{
-
 width:250px;
 }
 .list-type3 li, .list-type3 a{
@@ -96,7 +96,7 @@ content:"";
 float:left;
 position:absolute;
 top:0;
-left:-12px;
+left:-7px;
 width:0;
 height:0;
 border-color:transparent #0089e0 transparent transparent;
@@ -176,6 +176,18 @@ input[type=submit]:hover{
     left:100px;
 }
 
+#verEmpresa2{
+    background: #207d57;
+    position:relative;
+    top:-10px;
+  
+}
+
+#tituloEmpresa{
+    color:steelblue;
+    font-size: 30px;
+}
+
 #oferts{
     width: 70%;
     margin: auto;
@@ -185,6 +197,16 @@ input[type=submit]:hover{
 #oferts_titulo{
     color: #ffffff;
     background: #6699ff;
+    line-height: 2.5;
+    padding: 0 1em;
+    margin: 0;
+    box-shadow: 0 -1px, 0 0 #ffffff inset;
+    cursor:pointer;
+  
+}
+#oferts_titulo_comentarios{
+    color: #ffffff;
+    background: #60d597;
     line-height: 2.5;
     padding: 0 1em;
     margin: 0;
@@ -260,4 +282,84 @@ input[type=submit]:hover{
 }
 #volver:hover{
     background-color:black;
+}
+
+
+#foto{
+    position:absolute;
+    left:45%;
+    top:30%;
+}
+
+#perfil{
+    position:relative;
+    top: 17px;
+    left:50px;
+}
+
+#fotoPerf{
+    width: 13%;
+    
+    left: 180px;
+    border: 2px solid steelblue;
+    border-radius: 3px;
+}
+
+.fotitos{
+    position: relative;
+    width: 100px;
+    border: 2px solid steelblue;
+    border-radius: 3px;
+}
+#datosPerfil{
+    background-color: steelblue;
+    color:white;
+    width : 550px;
+    padding: 7px 7px 7px;
+}
+
+#tuperfil{
+    font-size: 40px;
+    position:relative;
+    left: 265px;
+}
+
+#botonEditarPerfilUsuario{
+    position: relative;
+    top: 13px;
+}
+
+#cambiarFotoBoton{
+    position: relative;
+    top:-27px;
+    left:150px;
+}
+
+#cambiarFoto{
+    display:none;
+}
+
+
+#informacionUsuarioEnBusqueda{
+    display: none;
+    position: absolute;
+    top:40%;
+    left:40%;
+}
+
+#comentarios{
+    display:none;
+    text-align: center;
+}
+
+.fotosGrandes{
+    position: absolute;
+    left:49%;
+    top:240px;
+}
+
+#tituloEmpresas{
+    font-size: 40px;
+    position: relative;
+    left: 110px;
 }

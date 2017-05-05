@@ -1,22 +1,23 @@
 
 package frontcontroller;
 
-import controllers.EnterpriseController;
+import controllers.CvsController;
+import entities.Cvs;
 import java.io.IOException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
 
-public class EditarPerfilEnterpriseCommand extends FrontCommand{
+public class SearchCVPersona extends FrontCommand{
 
     @Override
     public void process() {
-        EnterpriseController enterpriseController = new EnterpriseController();
-        List<String> lista = enterpriseController.getPerfil((String) request.getSession().getAttribute("name"));
-        request.setAttribute("perfil", lista);
+        CvsController cvsController = new CvsController();
+        List<Cvs> lista = cvsController.obtenerCVsDeUsuario((String) request.getParameter("id"));
+        request.setAttribute("lista", lista);
         try {
-            forward("/EditarPerfilEmpresa.jsp");
+            forward("/MuestraDocs.jsp");
         } catch (ServletException | IOException ex) {
             Logger.getLogger(loginCommand.class.getName()).log(Level.SEVERE, null, ex);
         }

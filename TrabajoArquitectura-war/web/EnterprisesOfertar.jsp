@@ -5,7 +5,10 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<%
+<%  if (request.getSession().getAttribute("name") == null) {
+                RequestDispatcher req = request.getRequestDispatcher("EnterpriseLoginWarning.jsp");
+                req.forward(request, response);
+    }
     OfertasController ofertasController = new OfertasController();
     List<Ofertas> ofertas = ofertasController.buscarMisOfertas((String) session.getAttribute("name"));
 

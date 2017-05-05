@@ -33,9 +33,9 @@
     <nav>
         <ul>
             <li><a title="PaginaPrincipal" href="PaginaPrincipal.jsp">Página principal</a></li>
-            <li><a title="AcercaDeArquiCV" href="AcercaDeArquiCV.jsp">Acerca de ArquiCV</a></li>
+            <li><a title="Empresas" href="Empresas.jsp">Empresas registradas</a></li>
             <li><a title="Documentos" href="MisDocumentos.jsp">Mis documentos</a></li>
-            <li><a title="Ventajas" href="Ventajas.jsp">Ventajas</a></li>
+            <li><a title="Perfil" href="Perfil.jsp">Perfil</a></li>
             <li><a title="Recursos" href="Recursos.jsp">Recursos</a></li>
             <li><a title="Social" href="Social.jsp">Social</a></li>
         </ul>

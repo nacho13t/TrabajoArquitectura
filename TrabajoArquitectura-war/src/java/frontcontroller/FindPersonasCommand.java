@@ -1,22 +1,25 @@
 
 package frontcontroller;
 
-import controllers.EnterpriseController;
+import controllers.LoginController;
+import entities.Login;
 import java.io.IOException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
 
-public class EditarPerfilEnterpriseCommand extends FrontCommand{
+public class FindPersonasCommand extends FrontCommand{
 
     @Override
     public void process() {
-        EnterpriseController enterpriseController = new EnterpriseController();
-        List<String> lista = enterpriseController.getPerfil((String) request.getSession().getAttribute("name"));
-        request.setAttribute("perfil", lista);
+        LoginController lc = new LoginController();
+        List<Login> lista = lc.buscar(request.getParameter("busqueda"));
+        if (!lista.isEmpty()) {
+            request.setAttribute("lista", lista);
+        }
         try {
-            forward("/EditarPerfilEmpresa.jsp");
+            forward("/SeePersonasSearchResult.jsp");
         } catch (ServletException | IOException ex) {
             Logger.getLogger(loginCommand.class.getName()).log(Level.SEVERE, null, ex);
         }

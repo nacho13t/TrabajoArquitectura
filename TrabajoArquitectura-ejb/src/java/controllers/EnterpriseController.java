@@ -37,6 +37,7 @@ public class EnterpriseController {
         EnterprisesFacade enterpriseFacade = lookupEnterprisesFacadeLocal();
         List<String> lista = new ArrayList();
         Enterprises empresa = enterpriseFacade.find(user);
+        System.out.println(user);
         lista.add(empresa.getPerfil());
         lista.add(empresa.getObjetivo());
         lista.add(empresa.getMision());
@@ -56,6 +57,55 @@ public class EnterpriseController {
         enterpriseFacade.edit(ent);
     }
     
+    public String obtenerValoracion(String empresa){
+        EnterprisesFacade enterpriseFacade = lookupEnterprisesFacadeLocal();
+        if(enterpriseFacade.find(empresa).getValoraciones()==null)return "Sin valoraciones";
+        double valoracion = enterpriseFacade.find(empresa).getValoracion();
+        double valoraciones = enterpriseFacade.find(empresa).getValoraciones();
+        double cociente = valoracion/valoraciones;
+        return Double.toString(cociente);
+    }
+    
+    public void registrarValoraciones(String empresa, int valoracion){
+        EnterprisesFacade enterpriseFacade = lookupEnterprisesFacadeLocal();
+        int val;
+        int valor;
+        Enterprises emp = enterpriseFacade.find(empresa);
+        if(emp.getValoraciones()==null){
+            val = 0;
+            valor = 0;
+        }else{
+            val = enterpriseFacade.find(empresa).getValoraciones();
+            valor = enterpriseFacade.find(empresa).getValoracion();
+        }
+        val++;  
+        if(valoracion==1){
+            valor++;
+        }
+        emp.setValoracion(valor);
+        emp.setValoraciones(val);
+        enterpriseFacade.edit(emp);
+        
+    }
+    
+    public void corregirValoracion(String empresa, boolean valoracion){
+        EnterprisesFacade enterpriseFacade = lookupEnterprisesFacadeLocal();
+        Enterprises emp = enterpriseFacade.find(empresa);
+        int valor = emp.getValoracion();
+        if(valoracion){ 
+            valor++;
+        }else{
+            valor--;    
+        }
+        emp.setValoracion(valor);
+        enterpriseFacade.edit(emp);
+    }
+    
+    public List<Enterprises> obtenerTodas(){
+        EnterprisesFacade enterpriseFacade = lookupEnterprisesFacadeLocal();
+        return enterpriseFacade.findAll();
+    }
+    
      private EnterprisesFacade lookupEnterprisesFacadeLocal() {
         try {
             Context c = new InitialContext();
@@ -65,5 +115,7 @@ public class EnterpriseController {
             throw new RuntimeException(ne);
         }
     }
+    
+    
   
 }

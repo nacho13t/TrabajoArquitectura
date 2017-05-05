@@ -13,15 +13,16 @@
 
         <jsp:include page="HeaderEmpresas.jsp" />
         <%if (request.getSession().getAttribute("name") == null) {
-                RequestDispatcher req = request.getRequestDispatcher("loginWarning.jsp");
+                request.setAttribute("tipoUsuario", "empresa");
+                RequestDispatcher req = request.getRequestDispatcher("EnterpriseLoginWarning.jsp");
                 req.forward(request, response);
             }%>
         <table>
             <tr>
-                <td><h3>Buscar personas por nombre, experiencia laboral, estudios...</h3>
+                <td><h3>Buscar personas por su perfil</h3>
                     <form action="FrontServlet">
                         <input type="text" name="busqueda">
-                        <input type="hidden" name="command" value="FindTextCommand">
+                        <input type="hidden" name="command" value="FindPersonasCommand">
                         <input type="hidden" name="tipo" value="empresas">
                         <input type="submit" value="Buscar">
                     </form>

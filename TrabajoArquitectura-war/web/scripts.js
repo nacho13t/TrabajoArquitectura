@@ -7,6 +7,10 @@ $('h4').on('click',function(){
     $('#textoHora').load(location.href + " #textoHora");
 });
 
+$('#cambiarFotoBoton').on('click',function(){
+   $('#cambiarFoto').slideToggle(); 
+});
+
 function validateCVForm(){
     if(document.forms["cvForm"]["firstname"].value.length>100){
         alert("El nombre no puede exceder las 100 letras");

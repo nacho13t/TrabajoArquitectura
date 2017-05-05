@@ -1,4 +1,3 @@
-
 <%@page import="entities.Cvs"%>
 <%@page import="java.util.List"%>
 <%@page import="controllers.CvsController"%>
@@ -11,7 +10,9 @@
         <link rel="stylesheet" type="text/css" href="newcss.css" media="screen" />
     </head>
     <body>
+        <h1>Mis documentos</h1>
         <%if(request.getSession().getAttribute("name") == null) {
+                request.setAttribute("tipoUsuario", "particular");
                 RequestDispatcher req = request.getRequestDispatcher("loginWarning.jsp");
                 req.forward(request, response);
             }

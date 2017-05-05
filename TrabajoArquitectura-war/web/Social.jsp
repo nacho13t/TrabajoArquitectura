@@ -30,7 +30,7 @@
                             </form>
                         </li>
                         <li>
-                            Buscar personas por nombre, experiencia laboral, estudios...
+                            Buscar currículums:
                             <form action="FrontServlet">
                                 <input type="text" name="busqueda">
                                 <input type="hidden" name="command" value="FindTextCommand">
@@ -43,6 +43,15 @@
                             <form action="FrontServlet">
                                 <input type="text" name="busqueda">
                                 <input type="hidden" name="command" value="FindOfertsCommand">
+                                <input type="submit" value="Buscar">
+                            </form>
+                        </li>
+                        <li>
+                            Buscar personas:
+                            <form action="FrontServlet">
+                                <input type="text" name="busqueda">
+                                <input type="hidden" name="command" value="FindPersonasCommand">
+                                <input type="hidden" name="tipo" value="usuarios">
                                 <input type="submit" value="Buscar">
                             </form>
                         </li>
