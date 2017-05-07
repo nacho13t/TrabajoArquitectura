@@ -27,7 +27,7 @@
                         <input type="submit" value="Buscar">
                     </form>
                 </td> 
-                <td><img src="images/foto8.jpg" alt="foto8"></td>
+                <td><img src="images/foto8.jpg" id="foto" alt="foto8"></td>
             </tr>
         </table>
 </html>

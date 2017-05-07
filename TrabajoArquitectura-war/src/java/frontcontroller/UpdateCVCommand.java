@@ -4,6 +4,7 @@ package frontcontroller;
 import controllers.CvsController;
 import entities.Cvs;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -13,6 +14,7 @@ public class UpdateCVCommand extends FrontCommand{
 
     @Override
     public void process() {
+        
         CvsController cvsController = new CvsController();
         String[] datos = new String[15];
         datos[0] = request.getParameter("firstname");

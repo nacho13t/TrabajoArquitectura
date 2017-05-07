@@ -15,7 +15,7 @@ public class DejarComentarioCommand extends FrontCommand{
         ComentariosController cc = new ComentariosController();
         cc.dejarComentario(request.getParameter("empresa"), (String) request.getSession().getAttribute("name"), request.getParameter("coment"));
         try {
-            forward("/Social.jsp");
+            forward("/Empresas.jsp");
         } catch (ServletException | IOException ex) {
             Logger.getLogger(loginCommand.class.getName()).log(Level.SEVERE, null, ex);
         }

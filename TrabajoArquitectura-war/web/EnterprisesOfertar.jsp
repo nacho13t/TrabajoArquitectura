@@ -54,7 +54,7 @@
                         </div>
                     
 
-                <td><img src="images/foto3.jpg" alt="foto6"></td>
+                <td><img src="images/foto3.jpg" id="foto" alt="foto6"></td>
             </tr>
         </table>
     <footer>

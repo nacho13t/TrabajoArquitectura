@@ -1,3 +1,4 @@
+<%@page import="controllers.EnterpriseController"%>
 <%@page import="controllers.ValoracionesController"%>
 <%@page import="controllers.ComentariosController"%>
 <%@page import="java.util.List"%>
@@ -8,6 +9,7 @@
 <%String[] titulos = {"Perfil", "Objetivo", "Misión", "Visión", "Valores"};%>
 <%List<String[]> comentarios = (List<String[]>) request.getAttribute("comentarios");%>
 <%ValoracionesController vc = new ValoracionesController();%>
+<%EnterpriseController enterpriseController = new EnterpriseController();%>
 
 <html>
     <head>
@@ -20,7 +22,12 @@
                 request.setAttribute("tipoUsuario", "particular");
                 RequestDispatcher req = request.getRequestDispatcher("loginWarning.jsp");
                 req.forward(request, response);
-            }%>
+            }
+        String val = enterpriseController.obtenerValoracion((String) request.getAttribute("empresa"));
+        if(!val.equals("Sin valoraciones")){
+            Double valor = Double.valueOf(val)*100;
+            val = String.valueOf(valor)+"/100";
+        }%>
         <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
         <div><ol>
                 <li><%=request.getAttribute("empresa")%></li>
@@ -33,13 +40,14 @@
             </ol></div>    
         <a onclick="goBack()" id ="volver">Volver</a>
         <div id="coments">
+            <h2>Valoración: <%=val%></h2>
             <h2>Comentarios de los usuarios</h2>
             <% for (String[] string : comentarios) {%>
             <p>"<%=string[1]%>"</p>
             <%}%>
-
-            <%if (vc.comprobarValoracion((String) request.getSession().getAttribute("name"), (String) request.getAttribute("empresa"))) {%>
             <button id="botonDejarComentario">Dejar comentario</button>
+            <%if (vc.comprobarValoracion((String) request.getSession().getAttribute("name"), (String) request.getAttribute("empresa"))) {%>
+            
             <form action="FrontServlet">
                 <input type="hidden" name="command" value="ValorarCommand">
                 <input type="hidden" name="empresa" value="<%=request.getAttribute("empresa")%>">

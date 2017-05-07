@@ -61,7 +61,7 @@
     <body>
         <h1 style="text-align: center">Currículum Vítae</h1>
         <div>
-        <form action="FrontServlet" name="cvForm" onsubmit="return validateCVForm()">
+        <form action="FrontServlet" name="cvForm" onsubmit="return validateCVForm()" method="post">
             <input type="hidden" name="command" value="UpdateCVCommand">
             <input type="hidden" name="id" value="<%=(String)datos.get(14)%>">
             

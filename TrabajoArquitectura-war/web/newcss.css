@@ -230,8 +230,15 @@ input[type=submit]:hover{
     margin: 0;
     padding: 1em 1em 1.5em;
     text-align: center;
+    width: 430px;
 }
-
+#oferts_contenidoPerfil{
+    display: none;
+    margin: 0;
+    padding: 1em 1em 1.5em;
+    text-align: center;
+    width: 480px;
+}
 #borrarOferta{
     border: none;
     background: black;
@@ -262,7 +269,7 @@ input[type=submit]:hover{
 #timerDiv{
     width: 300px;
     position:absolute;
-    top:89%;
+    top:92%;
     left:38%;
     display:block;
     padding:0;
@@ -362,4 +369,15 @@ input[type=submit]:hover{
     font-size: 40px;
     position: relative;
     left: 110px;
+}
+
+#scrollParaEmpresas{
+    text-align: center;
+    position:relative;
+    left:20px;
+    overflow-y: scroll;
+    width: 700px;
+    height: 345px;
+    background-color: #d9d9d9;
+
 }

@@ -57,6 +57,6 @@
                         </li>
                     </ul>
                 </td> 
-                <td><img src="images/foto5.jpg" alt="foto2"></td>
+                <td><img src="images/foto5.jpg" id="foto" alt="foto2"></td>
             </tr>
         </table>

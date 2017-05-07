@@ -44,7 +44,7 @@
                         <%  int i = 0;
                             for (String item : lista) {%>
                         <h2 id="oferts_titulo"><%=titulos[i]%></h2>
-                        <p id="oferts_contenido"><%=item%></p>
+                        <p id="oferts_contenidoPerfil"><%=item%></p>
                         <% i++;
                             }%>
                         <h2 id="oferts_titulo_comentarios">Comentarios de usuarios</h2>
@@ -63,7 +63,7 @@
                         <input type="hidden" name="command" value="EditarPerfilEnterpriseCommand">
                         <input type="submit" value="Editar perfil">
                     </form></td>
-                <td><img src="images/foto7.jpg" alt="foto7"></td>
+                <td><img src="images/foto7.jpg" id="foto" alt="foto7"></td>
             </tr>
         </table>
 

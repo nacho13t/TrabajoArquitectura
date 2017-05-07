@@ -18,6 +18,7 @@
         <table>
             <tr>
                 <td>
+                    <div id="scrollParaEmpresas">
                     <%for (Enterprises empresa : empresas) {%>
                     <p><h2 id="tituloEmpresa"><%=empresa.getEnterprise()%></h2></p>
                     <%String val = ec.obtenerValoracion(empresa.getEnterprise());
@@ -33,7 +34,8 @@
                 </form>
                         <%}
                     %>
-                </td>
+                    </div>
+                    </td>
                 <td><img src="images/foto2.jpg" alt="foto2" class="fotosGrandes"></td>
             </tr>
         </table>
